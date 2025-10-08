@@ -19,8 +19,18 @@ function buildCompleteEvaluationPrompt() {
 2. Identify ALL questions in every section (Section I, II, III, IV, etc.)
 3. Look at the answer sheet images to find the student's answers for each question
 4. Extract student information (name, class, roll number) if available
-5. Evaluate EVERY single question with step-by-step scoring
-6. Provide constructive feedback for each question
+5. Evaluate EVERY single question with detailed, subject-appropriate analysis
+6. Provide comprehensive feedback for each question based on subject type
+
+**SUBJECT ADAPTATION:**
+Before evaluating each question, identify the subject type and adapt your evaluation approach:
+- MATHEMATICAL: Show exact calculations, identify specific errors, verify formulas
+- ENGLISH: Analyze content quality, language, structure, creativity
+- BIOLOGY: Check diagrams, terminology, concept understanding, processes
+- HISTORY: Check facts, arguments, evidence, critical thinking
+- CHEMISTRY: Verify equations, naming, reactions, calculations
+- PHYSICS: Check formulas, calculations, diagrams, problem solving
+- GENERAL: Adapt evaluation to question type (MCQ, essay, short answer, etc.)
 
 **CRITICAL INSTRUCTIONS FOR FINDING ALL QUESTIONS:**
 - Scan the FULL page area - top, middle, AND bottom edges
@@ -89,29 +99,88 @@ Return your evaluation in the following JSON format:
       "scoreAwarded": marks_given_to_student,
       "studentAnswer": "What the student wrote (transcribe if handwritten)",
       "referenceAnswer": "Expected/ideal answer",
-      "steps": [
-        {
-          "stepText": "Description of this evaluation step",
-          "score": marks_for_this_step,
-          "explanation": "Why these marks were awarded or deducted"
-        }
-      ]
+      "subjectType": "Auto-detected subject type (mathematical, english, biology, history, chemistry, physics, general)",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page X):",
+        "studentWork": "Exact transcription of what student wrote with all steps",
+        "correctElements": ["List what the student did correctly"],
+        "errors": ["List specific errors or mistakes identified"],
+        "mathematicalSteps": "For math: Step-by-step analysis of calculations (if applicable)",
+        "contentAnalysis": "For essays: Analysis of content, structure, language (if applicable)",
+        "diagramAnalysis": "For diagrams: Accuracy, labeling, understanding (if applicable)",
+        "partialCreditReasoning": "Detailed explanation of why this score was awarded",
+        "suggestions": "Constructive suggestions for improvement"
+      }
     }
   ],
   "timestamp": "${new Date().toISOString()}"
 }
 
-**Example with gaps in numbering:**
-If student answered questions 1, 2, 5, 8, 9 from the paper (skipped 3, 4, 6, 7):
+**EXAMPLES OF DETAILED ANALYSIS BY SUBJECT:**
+
+**Mathematics Example:**
 {
-  "questions": [
-    {"questionId": "Q1", "questionText": "...", ...},
-    {"questionId": "Q2", "questionText": "...", ...},
-    {"questionId": "Q5", "questionText": "...", ...},  ← Q3, Q4 skipped - this is correct!
-    {"questionId": "Q8", "questionText": "...", ...},  ← Q6, Q7 skipped - preserve Q8!
-    {"questionId": "Q9", "questionText": "...", ...}
-  ]
+  "questionId": "Q1",
+  "subjectType": "mathematical",
+  "detailedAnalysis": {
+    "pageReference": "Student's answer (page 3):",
+    "studentWork": "sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2/2 = √2",
+    "correctElements": ["Correct trigonometric values", "Proper simplification to √2"],
+    "errors": ["Minor notation issue in final step"],
+    "mathematicalSteps": "Step 1: sin 45° = 1/√2 ✓, Step 2: cos 45° = 1/√2 ✓, Step 3: Addition = 2/√2 ✓, Step 4: Simplification = √2 ✓",
+    "partialCreditReasoning": "All calculations correct, final answer √2 is right, minor notation issue doesn't affect correctness"
+  }
 }
+
+**English Essay Example:**
+{
+  "questionId": "Q2",
+  "subjectType": "english",
+  "detailedAnalysis": {
+    "pageReference": "Student's answer (page 4):",
+    "studentWork": "The theme of friendship is central to the novel. The author shows how...",
+    "correctElements": ["Identifies main theme correctly", "Provides specific examples from text"],
+    "errors": ["Some grammatical errors in complex sentences", "Could use more sophisticated vocabulary"],
+    "contentAnalysis": "Strong understanding of theme, good use of textual evidence, well-structured argument",
+    "partialCreditReasoning": "Excellent content and analysis, minor language issues don't detract from overall quality"
+  }
+}
+
+**Biology Diagram Example:**
+{
+  "questionId": "Q3",
+  "subjectType": "biology",
+  "detailedAnalysis": {
+    "pageReference": "Student's answer (page 2):",
+    "studentWork": "Diagram shows cell with labeled parts: nucleus, cytoplasm, cell membrane",
+    "correctElements": ["Correctly labeled 8 out of 10 parts", "Used proper scientific terminology"],
+    "errors": ["Missing mitochondria and ribosome labels"],
+    "diagramAnalysis": "Good understanding of basic cell structure, accurate placement of labeled parts",
+    "partialCreditReasoning": "Strong grasp of cell biology concepts, minor omissions in labeling"
+  }
+}
+
+**DETAILED EVALUATION REQUIREMENTS:**
+For each question, provide comprehensive analysis including:
+
+1. **EXACT STUDENT WORK TRANSCRIPTION:**
+   - Show exactly what the student wrote (transcribe handwritten text precisely)
+   - Include page references: "Student's answer (page 3):"
+   - Capture all mathematical steps, diagrams, and written responses
+
+2. **SUBJECT-SPECIFIC ANALYSIS:**
+   - For MATHEMATICAL: Show step-by-step calculations, identify specific errors, verify formulas
+   - For ENGLISH: Analyze content quality, language use, structure, creativity
+   - For BIOLOGY: Check diagram accuracy, terminology, concept understanding
+   - For HISTORY: Verify facts, analyze arguments, assess critical thinking
+   - For CHEMISTRY: Check equations, naming conventions, reaction understanding
+   - For PHYSICS: Verify formulas, calculations, problem-solving approach
+
+3. **DETAILED FEEDBACK:**
+   - What the student did correctly
+   - Specific errors or areas for improvement
+   - Partial credit reasoning (why they got 3/4 instead of 4/4)
+   - Constructive suggestions for improvement
 
 **EVALUATION GUIDELINES:**
 - Be fair and consistent in grading
@@ -121,7 +190,6 @@ If student answered questions 1, 2, 5, 8, 9 from the paper (skipped 3, 4, 6, 7):
 - If answer shows understanding but has minor errors, award 70-90%
 - If answer has major conceptual errors, award 30-60%
 - If answer is completely wrong or missing, award 0-20%
-- Break down each question into logical steps with individual scores
 
 **CRITICAL - SCORING:**
 - evaluation.maxScore = SUM of ALL individual question maxMarks

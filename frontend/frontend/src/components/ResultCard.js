@@ -125,18 +125,98 @@ const ResultCard = () => {
                     <div className="reference-text">{question.referenceAnswer}</div>
                   </div>
 
-                  <div className="steps-section">
-                    <h4>Step-by-step Evaluation:</h4>
-                    {question.steps.map((step, stepIndex) => (
-                      <div key={stepIndex} className="step-item">
-                        <div className="step-header">
-                          <span className="step-text">{step.stepText}</span>
-                          <span className="step-score">+{step.score}</span>
+                  {/* New detailed analysis section */}
+                  {question.detailedAnalysis && (
+                    <div className="detailed-analysis-section">
+                      <h4>Detailed Analysis:</h4>
+                      
+                      {question.detailedAnalysis.pageReference && (
+                        <div className="analysis-item">
+                          <strong>Location:</strong> {question.detailedAnalysis.pageReference}
                         </div>
-                        <div className="step-explanation">{step.explanation}</div>
-                      </div>
-                    ))}
-                  </div>
+                      )}
+
+                      {question.detailedAnalysis.studentWork && (
+                        <div className="analysis-item">
+                          <strong>Student's Work:</strong>
+                          <div className="student-work">{question.detailedAnalysis.studentWork}</div>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.correctElements && question.detailedAnalysis.correctElements.length > 0 && (
+                        <div className="analysis-item">
+                          <strong>✅ What's Correct:</strong>
+                          <ul>
+                            {question.detailedAnalysis.correctElements.map((element, idx) => (
+                              <li key={idx}>{element}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.errors && question.detailedAnalysis.errors.length > 0 && (
+                        <div className="analysis-item">
+                          <strong>❌ Areas for Improvement:</strong>
+                          <ul>
+                            {question.detailedAnalysis.errors.map((error, idx) => (
+                              <li key={idx}>{error}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.mathematicalSteps && (
+                        <div className="analysis-item">
+                          <strong>Mathematical Steps:</strong>
+                          <div className="math-steps">{question.detailedAnalysis.mathematicalSteps}</div>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.contentAnalysis && (
+                        <div className="analysis-item">
+                          <strong>Content Analysis:</strong>
+                          <div className="content-analysis">{question.detailedAnalysis.contentAnalysis}</div>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.diagramAnalysis && (
+                        <div className="analysis-item">
+                          <strong>Diagram Analysis:</strong>
+                          <div className="diagram-analysis">{question.detailedAnalysis.diagramAnalysis}</div>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.partialCreditReasoning && (
+                        <div className="analysis-item">
+                          <strong>Scoring Explanation:</strong>
+                          <div className="scoring-explanation">{question.detailedAnalysis.partialCreditReasoning}</div>
+                        </div>
+                      )}
+
+                      {question.detailedAnalysis.suggestions && (
+                        <div className="analysis-item">
+                          <strong>Suggestions:</strong>
+                          <div className="suggestions">{question.detailedAnalysis.suggestions}</div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Fallback to old steps format if detailedAnalysis not available */}
+                  {!question.detailedAnalysis && question.steps && (
+                    <div className="steps-section">
+                      <h4>Step-by-step Evaluation:</h4>
+                      {question.steps.map((step, stepIndex) => (
+                        <div key={stepIndex} className="step-item">
+                          <div className="step-header">
+                            <span className="step-text">{step.stepText}</span>
+                            <span className="step-score">+{step.score}</span>
+                          </div>
+                          <div className="step-explanation">{step.explanation}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

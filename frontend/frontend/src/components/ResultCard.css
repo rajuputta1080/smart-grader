@@ -374,6 +374,84 @@
   }
 }
 
+/* Detailed Analysis Styles */
+.detailed-analysis-section {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.detailed-analysis-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.analysis-item {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.analysis-item strong {
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.student-work {
+  background: #f1f3f4;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: 1px solid #e0e0e0;
+  margin-top: 0.5rem;
+}
+
+.math-steps {
+  background: #e8f5e8;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: 1px solid #c8e6c9;
+  margin-top: 0.5rem;
+}
+
+.content-analysis, .diagram-analysis, .scoring-explanation, .suggestions {
+  background: #fff3e0;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: 1px solid #ffcc02;
+  margin-top: 0.5rem;
+}
+
+.analysis-item ul {
+  margin: 0.5rem 0 0 1.2rem;
+  padding: 0;
+}
+
+.analysis-item li {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.analysis-item li:last-child {
+  margin-bottom: 0;
+}
+
 @media print {
   .result-header {
     display: none;
