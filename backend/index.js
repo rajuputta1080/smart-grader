@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const evaluationRoutes = require('./routes/evaluation');
@@ -8,4 +9,8 @@ app.use(express.json());
 
 app.use('/api/evaluate', evaluationRoutes);
 
-app.listen(5000, () => console.log('Backend running on port 5000'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
+  console.log(`OpenAI Model: ${process.env.OPENAI_MODEL || 'gpt-4o'}`);
+});
