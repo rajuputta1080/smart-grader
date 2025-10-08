@@ -4,3 +4,25 @@ uploads/
 *.log
 .DS_Store
 
+# Test files and temporary scripts
+analyze_*.js
+check_*.js
+extract_*.js
+test_*.js
+
+# Sample PDFs for testing
+*.pdf
+
+# Response files from testing
+response*.json
+
+# Old implementation files (kept for reference)
+utils/batchedEvaluation.js
+utils/fileParser.js
+utils/openaiService.js
+utils/visionBatchedEvaluation.js
+utils/visionOpenaiService.js
+
+# OCR training data
+*.traineddata
+
