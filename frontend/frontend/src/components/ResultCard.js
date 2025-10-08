@@ -25,17 +25,6 @@ const ResultCard = () => {
     window.print();
   };
 
-  const downloadJSON = () => {
-    const dataStr = JSON.stringify(result, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
-    const exportFileDefaultName = `evaluation_result_${result?.student?.name || 'student'}.json`;
-    
-    const linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', exportFileDefaultName);
-    linkElement.click();
-  };
 
   const goBack = () => {
     window.location.href = '/';
@@ -58,8 +47,7 @@ const ResultCard = () => {
       <div className="result-header">
         <button onClick={goBack} className="back-btn">← Back to Upload</button>
         <div className="header-actions">
-          <button onClick={downloadJSON} className="action-btn">Download JSON</button>
-          <button onClick={exportToPDF} className="action-btn primary">Export PDF</button>
+          <button onClick={exportToPDF} className="action-btn primary">Download Report</button>
         </div>
       </div>
 
