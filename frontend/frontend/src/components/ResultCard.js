@@ -101,7 +101,7 @@ const ResultCard = () => {
                 onClick={() => toggleQuestion(question.questionId)}
               >
                 <div className="question-title">
-                  <span className="question-number">Q{question.questionId}</span>
+                  <span className="question-number">{question.questionId}</span>
                   <span className="question-text">{question.questionText}</span>
                 </div>
                 <div className="question-score">
