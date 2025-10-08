@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-10-08T05:51:55.585Z",
+  "questionPaperPages": 1,
+  "answerSheetPages": 6,
+  "method": "vision-api",
+  "totalImages": 7
+}
