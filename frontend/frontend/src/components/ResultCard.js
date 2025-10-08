@@ -21,8 +21,25 @@ const ResultCard = () => {
   };
 
   const exportToPDF = () => {
-    // Simple PDF export - in a real app, you'd use a library like jsPDF
-    window.print();
+    // Expand all questions before printing to ensure all details are included in PDF
+    const allQuestionIds = result.questions.map(q => q.questionId);
+    const expandedState = {};
+    allQuestionIds.forEach(id => {
+      expandedState[id] = true;
+    });
+    
+    // Temporarily expand all questions
+    setExpandedQuestions(expandedState);
+    
+    // Wait a moment for the UI to update, then print
+    setTimeout(() => {
+      window.print();
+      
+      // Optionally collapse all questions back after printing
+      setTimeout(() => {
+        setExpandedQuestions({});
+      }, 1000);
+    }, 500);
   };
 
 

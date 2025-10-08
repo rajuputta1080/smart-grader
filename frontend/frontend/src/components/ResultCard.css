@@ -468,4 +468,26 @@
   .question-details {
     display: block !important;
   }
+  
+  /* Ensure all questions are expanded and visible in print */
+  .question-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .detailed-analysis-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Hide expand/collapse arrows in print */
+  .expand-icon {
+    display: none;
+  }
+  
+  /* Ensure good spacing for print */
+  .analysis-item {
+    margin-bottom: 0.8rem;
+  }
 }
