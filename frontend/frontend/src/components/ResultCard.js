@@ -31,12 +31,16 @@ const ResultCard = () => {
     // Temporarily expand all questions
     setExpandedQuestions(expandedState);
     
+    // Add print-specific class to body for aggressive spacing reduction
+    document.body.classList.add('print-mode');
+    
     // Wait a moment for the UI to update, then print
     setTimeout(() => {
       window.print();
       
-      // Optionally collapse all questions back after printing
+      // Clean up after printing
       setTimeout(() => {
+        document.body.classList.remove('print-mode');
         setExpandedQuestions({});
       }, 1000);
     }, 500);

@@ -473,12 +473,15 @@
   .question-card {
     break-inside: avoid;
     page-break-inside: avoid;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   
   .detailed-analysis-section {
     break-inside: avoid;
     page-break-inside: avoid;
+    padding: 0.5rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
   }
   
   /* Hide expand/collapse arrows in print */
@@ -486,17 +489,75 @@
     display: none;
   }
   
-  /* Ensure good spacing for print */
+  /* Aggressive spacing reduction for print */
   .analysis-item {
-    margin-bottom: 0.5rem;
-  }
-  
-  .detailed-analysis-section {
-    padding: 0.8rem;
-    margin-top: 0.3rem;
+    margin-bottom: 0.3rem !important;
+    padding: 0.4rem !important;
   }
   
   .detailed-analysis-section h4 {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.4rem !important;
+    margin-top: 0.2rem !important;
   }
+  
+  /* Reduce spacing between sections */
+  .answer-section, .reference-section, .steps-section {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .answer-section h4, .reference-section h4, .steps-section h4 {
+    margin-bottom: 0.4rem !important;
+  }
+  
+  /* Reduce padding in question details */
+  .question-details {
+    padding: 0.5rem !important;
+  }
+  
+  /* Reduce margins in content boxes */
+  .student-work, .math-steps, .content-analysis, .diagram-analysis, .scoring-explanation, .suggestions {
+    padding: 0.4rem !important;
+    margin-top: 0.2rem !important;
+  }
+  
+  /* Reduce list spacing */
+  .analysis-item ul {
+    margin: 0.3rem 0 0 1rem !important;
+  }
+  
+  .analysis-item li {
+    margin-bottom: 0.2rem !important;
+  }
+}
+
+/* Additional print-mode class for even more aggressive spacing reduction */
+body.print-mode .detailed-analysis-section {
+  padding: 0.3rem !important;
+  margin-top: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
+}
+
+body.print-mode .analysis-item {
+  margin-bottom: 0.2rem !important;
+  padding: 0.3rem !important;
+}
+
+body.print-mode .question-details {
+  padding: 0.3rem !important;
+}
+
+body.print-mode .answer-section, 
+body.print-mode .reference-section, 
+body.print-mode .steps-section {
+  margin-bottom: 0.3rem !important;
+}
+
+body.print-mode .student-work, 
+body.print-mode .math-steps, 
+body.print-mode .content-analysis, 
+body.print-mode .diagram-analysis, 
+body.print-mode .scoring-explanation, 
+body.print-mode .suggestions {
+  padding: 0.3rem !important;
+  margin-top: 0.1rem !important;
 }
