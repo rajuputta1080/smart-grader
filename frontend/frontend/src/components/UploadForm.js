@@ -57,7 +57,7 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
     });
 
     try {
-      const response = await fetch('https://smart-grader-production.up.railway.app/api/evaluate', {
+      const response = await fetch('https://api.smartgrader.in/api/evaluate', {
         method: 'POST',
         body: formData,
       });
