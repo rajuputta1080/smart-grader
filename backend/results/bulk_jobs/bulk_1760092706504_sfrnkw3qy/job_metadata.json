@@ -1,0 +1,127 @@
+{
+  "id": "bulk_1760092706504_sfrnkw3qy",
+  "status": "completed",
+  "createdAt": "2025-10-10T10:38:26.504Z",
+  "updatedAt": "2025-10-10T10:45:39.062Z",
+  "questionPaper": {
+    "filename": "question-paper.pdf",
+    "pages": 0
+  },
+  "strategy": {
+    "tokensPerSheet": 50800,
+    "concurrency": 1,
+    "useBatching": false,
+    "estimatedTime": {
+      "seconds": 300,
+      "minutes": 5,
+      "formatted": "5 minutes"
+    },
+    "totalBatches": 5,
+    "strategy": "single-call-evaluation"
+  },
+  "progress": {
+    "total": 5,
+    "completed": 5,
+    "processing": 0,
+    "queued": 0,
+    "failed": 0,
+    "percentage": 100
+  },
+  "sheets": [
+    {
+      "id": "sheet_0_1760092706504",
+      "index": 0,
+      "filename": "saicharan.pdf",
+      "pages": 0,
+      "status": "complete",
+      "result": {
+        "studentName": "A. Saicharan",
+        "score": 19.5,
+        "maxScore": 20,
+        "percentage": 97.5,
+        "grade": "A+",
+        "questionsEvaluated": 10
+      },
+      "error": null,
+      "startedAt": "2025-10-10T10:38:26.794Z",
+      "completedAt": "2025-10-10T10:40:05.007Z",
+      "tokensUsed": 12540
+    },
+    {
+      "id": "sheet_1_1760092706504",
+      "index": 1,
+      "filename": "maheshwari_ocr.pdf",
+      "pages": 0,
+      "status": "complete",
+      "result": {
+        "studentName": "R. Maheshwari",
+        "score": 17.5,
+        "maxScore": 20,
+        "percentage": 87.5,
+        "grade": "A",
+        "questionsEvaluated": 10
+      },
+      "error": null,
+      "startedAt": "2025-10-10T10:40:07.009Z",
+      "completedAt": "2025-10-10T10:41:08.127Z",
+      "tokensUsed": 12642
+    },
+    {
+      "id": "sheet_2_1760092706504",
+      "index": 2,
+      "filename": "ishanth.pdf",
+      "pages": 0,
+      "status": "complete",
+      "result": {
+        "studentName": "B. Ishanth",
+        "score": 18,
+        "maxScore": 20,
+        "percentage": 90,
+        "grade": "A+",
+        "questionsEvaluated": 10
+      },
+      "error": null,
+      "startedAt": "2025-10-10T10:41:10.129Z",
+      "completedAt": "2025-10-10T10:42:22.517Z",
+      "tokensUsed": 13692
+    },
+    {
+      "id": "sheet_3_1760092706504",
+      "index": 3,
+      "filename": "pooja.pdf",
+      "pages": 0,
+      "status": "complete",
+      "result": {
+        "studentName": "R. Pooja",
+        "score": 18,
+        "maxScore": 20,
+        "percentage": 90,
+        "grade": "A",
+        "questionsEvaluated": 10
+      },
+      "error": null,
+      "startedAt": "2025-10-10T10:42:24.519Z",
+      "completedAt": "2025-10-10T10:44:02.659Z",
+      "tokensUsed": 10529
+    },
+    {
+      "id": "sheet_4_1760092706504",
+      "index": 4,
+      "filename": "mukesh.pdf",
+      "pages": 0,
+      "status": "complete",
+      "result": {
+        "studentName": "B. Mukesh",
+        "score": 14,
+        "maxScore": 20,
+        "percentage": 70,
+        "grade": "B",
+        "questionsEvaluated": 9
+      },
+      "error": null,
+      "startedAt": "2025-10-10T10:44:04.661Z",
+      "completedAt": "2025-10-10T10:45:39.062Z",
+      "tokensUsed": 10173
+    }
+  ]
+}

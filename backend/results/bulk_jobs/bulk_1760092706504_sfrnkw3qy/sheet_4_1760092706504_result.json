@@ -1,0 +1,208 @@
+{
+  "student": {
+    "name": "B. Mukesh",
+    "class": "10th Sec: C",
+    "rollNumber": "19"
+  },
+  "exam": {
+    "name": "FA-2",
+    "date": "19-9-2025",
+    "totalMarks": 20
+  },
+  "evaluation": {
+    "totalScore": 14,
+    "maxScore": 20,
+    "percentage": 70,
+    "grade": "B",
+    "overallFeedback": "The student has demonstrated a good understanding of mathematical concepts with minor errors. Improvement in problem-solving techniques and attention to detail is recommended."
+  },
+  "questions": [
+    {
+      "questionId": "1",
+      "questionText": "Evaluate sin 45° + cos 45°.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "sin 45° + cos 45° = 1/√2 + 1/√2 = √2/2 = 1/√2",
+      "referenceAnswer": "sin 45° = 1/√2, cos 45° = 1/√2, sin 45° + cos 45° = √2/2",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 3):",
+        "studentWork": "Given sin 45° + cos 45° value is same 1/√2. sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2/2 = 1/√2",
+        "correctElements": [
+          "Correct trigonometric values",
+          "Proper simplification"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: sin 45° = 1/√2 ✓, Step 2: cos 45° = 1/√2 ✓, Step 3: Addition = 2/√2 ✓, Step 4: Simplification = 1/√2 ✓",
+        "partialCreditReasoning": "All calculations correct, final answer is right.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "2",
+      "questionText": "If tan 2A = cot (A - 18°) where 2A is an acute angle, find the value of A.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "The value of A = 36°",
+      "referenceAnswer": "tan 2A = cot (A - 18°), 2A + A = 90 + 18, 3A = 108, A = 36°",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 3):",
+        "studentWork": "tan (2A - 90) = cot (A - 18), 90 - 2A = A - 18, 2A + A = 90 + 18, 3A = 108, A = 36",
+        "correctElements": [
+          "Correct use of identities",
+          "Accurate calculation"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Set up equation ✓, Step 2: Solve for A ✓",
+        "partialCreditReasoning": "All steps correct, full marks awarded.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "3",
+      "questionText": "Length of the shadow of a 15 meter high pole is 5√3 meters at 7 o'clock in the morning, what is the angle of elevation of the sun rays with the ground at the time.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "The angle of elevation is 60°",
+      "referenceAnswer": "tan θ = opposite/adjacent = 15/5√3 = √3, θ = 60°",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 4):",
+        "studentWork": "tan θ = opposite side/adjacent side = 15/5√3 = √3, θ = 60°",
+        "correctElements": [
+          "Correct trigonometric ratio",
+          "Accurate calculation"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Set up tan θ ✓, Step 2: Solve for θ ✓",
+        "partialCreditReasoning": "Correct calculation and conclusion.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "4",
+      "questionText": "Check whether the given pair of equations represent intersecting, parallel or coincident lines.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "The given pair of linear equations are intersecting lines. They have only one solution.",
+      "referenceAnswer": "a1/a2 ≠ b1/b2, hence intersecting lines.",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 4):",
+        "studentWork": "a1/a2 = 5/7, b1/b2 = -4/6, c1/c2 = 8/-9, a1/a2 ≠ b1/b2, intersecting lines.",
+        "correctElements": [
+          "Correct comparison of ratios",
+          "Accurate conclusion"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Calculate ratios ✓, Step 2: Compare ratios ✓",
+        "partialCreditReasoning": "Correct method and conclusion.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "5",
+      "questionText": "Solve 8x + 5y = 9 by an elimination method.",
+      "maxMarks": 4,
+      "scoreAwarded": 3,
+      "studentAnswer": "Solution is (-2, 5)",
+      "referenceAnswer": "Solve by elimination: x = -2, y = 5",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 5):",
+        "studentWork": "8x + 5y = 9, 3x + 2y = 4, multiply and eliminate, x = -2, y = 5",
+        "correctElements": [
+          "Correct elimination setup",
+          "Accurate solution"
+        ],
+        "errors": [
+          "Minor calculation error in elimination step"
+        ],
+        "mathematicalSteps": "Step 1: Set up equations ✓, Step 2: Eliminate ✓, Step 3: Solve for x and y ✓",
+        "partialCreditReasoning": "Minor error in calculation, but correct method.",
+        "suggestions": "Double-check calculations for accuracy."
+      }
+    },
+    {
+      "questionId": "8",
+      "questionText": "cot (90° - A) = [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) tan A",
+      "referenceAnswer": "cot (90° - A) = tan A",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "D) tan A",
+        "correctElements": [
+          "Correct trigonometric identity"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "9",
+      "questionText": "The point (-3, -8) is in the quadrant [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 0,
+      "studentAnswer": "C) Q3",
+      "referenceAnswer": "B) Q3",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "C) Q3",
+        "correctElements": [],
+        "errors": [
+          "Incorrect quadrant selection"
+        ],
+        "partialCreditReasoning": "Incorrect answer, no marks awarded.",
+        "suggestions": "Review quadrant rules for coordinate points."
+      }
+    },
+    {
+      "questionId": "10",
+      "questionText": "x + y = 2015 has [ ] number of solutions",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) Infinite",
+      "referenceAnswer": "D) Infinite",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "D) Infinite",
+        "correctElements": [
+          "Correct understanding of linear equation solutions"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "None needed, well done."
+      }
+    },
+    {
+      "questionId": "11",
+      "questionText": "Value of tan 30° + 2 cot 60° [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "A) 2/3",
+      "referenceAnswer": "A) 2/3",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "A) 2/3",
+        "correctElements": [
+          "Correct calculation of trigonometric values"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "None needed, well done."
+      }
+    }
+  ],
+  "timestamp": "2025-10-10T10:44:05.655Z",
+  "evaluationTime": "93.41 seconds",
+  "tokensUsed": 10173,
+  "method": "vision-api-complete"
+}

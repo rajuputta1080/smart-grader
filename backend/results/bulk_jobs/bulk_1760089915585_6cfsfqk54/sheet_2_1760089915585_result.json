@@ -1,0 +1,225 @@
+{
+  "student": {
+    "name": "B. Mukesh",
+    "class": "10th Sec: C",
+    "rollNumber": "19"
+  },
+  "exam": {
+    "name": "FA-2",
+    "date": "2025-09-19",
+    "totalMarks": 20
+  },
+  "evaluation": {
+    "totalScore": 17,
+    "maxScore": 20,
+    "percentage": "85",
+    "grade": "A",
+    "overallFeedback": "The student has demonstrated a strong understanding of the concepts in questions 1-6, with only minor errors. Continued practice will help in achieving full marks. The student performed well on the multiple-choice questions, demonstrating a good understanding of the concepts. However, there is room for improvement in accuracy."
+  },
+  "questions": [
+    {
+      "questionId": "Q1",
+      "questionText": "Evaluate sin 45° + cos 45°.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2/√2 = 1",
+      "referenceAnswer": "sin 45° = cos 45° = 1/√2, so sin 45° + cos 45° = 1.",
+      "steps": [
+        {
+          "stepText": "Calculate sin 45° and cos 45°.",
+          "score": 1,
+          "explanation": "Correctly identified sin 45° and cos 45° as 1/√2."
+        },
+        {
+          "stepText": "Add the values and simplify.",
+          "score": 1,
+          "explanation": "Correctly added and simplified to get 1."
+        }
+      ]
+    },
+    {
+      "questionId": "Q2",
+      "questionText": "If tan 2A = cot (A - 18°) where 2A is an acute angle, find the value of A.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "tan (2A) = cot (A - 18°) implies 2A + A = 90° + 18°, 3A = 108°, A = 36°.",
+      "referenceAnswer": "Using tan 2A = cot (A - 18°), solve to find A = 36°.",
+      "steps": [
+        {
+          "stepText": "Set up the equation tan 2A = cot (A - 18°).",
+          "score": 1,
+          "explanation": "Correctly set up the equation."
+        },
+        {
+          "stepText": "Solve for A.",
+          "score": 1,
+          "explanation": "Correctly solved to find A = 36°."
+        }
+      ]
+    },
+    {
+      "questionId": "Q3",
+      "questionText": "Length of the shadow of a 15-meter high pole is 5√3 meters at 7 o'clock in the morning. What is the angle of elevation of the sunrays with the ground at the time?",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "tan θ = opposite/adjacent = 15/5√3 = √3, θ = 60°.",
+      "referenceAnswer": "Using tan θ = opposite/adjacent, find θ = 60°.",
+      "steps": [
+        {
+          "stepText": "Calculate tan θ using the given lengths.",
+          "score": 1,
+          "explanation": "Correctly calculated tan θ."
+        },
+        {
+          "stepText": "Find the angle θ.",
+          "score": 1,
+          "explanation": "Correctly found θ = 60°."
+        }
+      ]
+    },
+    {
+      "questionId": "Q4",
+      "questionText": "Check whether the given pair of equations represent intersecting, parallel, or coincident lines: 5x - 4y + 8 = 0 and 7x + 6y - 9 = 0.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "a1/a2 ≠ b1/b2, so the lines are intersecting.",
+      "referenceAnswer": "Calculate ratios a1/a2 and b1/b2 to determine the lines intersect.",
+      "steps": [
+        {
+          "stepText": "Calculate the ratios a1/a2 and b1/b2.",
+          "score": 1,
+          "explanation": "Correctly calculated the ratios."
+        },
+        {
+          "stepText": "Determine the relationship between the lines.",
+          "score": 1,
+          "explanation": "Correctly identified the lines as intersecting."
+        }
+      ]
+    },
+    {
+      "questionId": "Q5",
+      "questionText": "Solve 8x + 5y = 9 and 3x + 2y = 4 by the elimination method.",
+      "maxMarks": 4,
+      "scoreAwarded": 3,
+      "studentAnswer": "Multiply equations to eliminate y, solve for x = -2, y = 5.",
+      "referenceAnswer": "Use elimination to find x = -2, y = 5.",
+      "steps": [
+        {
+          "stepText": "Multiply equations to align coefficients.",
+          "score": 1,
+          "explanation": "Correctly multiplied equations."
+        },
+        {
+          "stepText": "Eliminate y and solve for x.",
+          "score": 1,
+          "explanation": "Correctly eliminated y and solved for x."
+        },
+        {
+          "stepText": "Substitute back to find y.",
+          "score": 1,
+          "explanation": "Correctly substituted to find y."
+        },
+        {
+          "stepText": "Verify solution.",
+          "score": 0,
+          "explanation": "Minor error in verification step."
+        }
+      ]
+    },
+    {
+      "questionId": "Q6",
+      "questionText": "Prove that √(1 + cos θ) / (1 - cos θ) = cosec θ + cot θ.",
+      "maxMarks": 4,
+      "scoreAwarded": 3,
+      "studentAnswer": "Proof involves trigonometric identities, partial steps shown.",
+      "referenceAnswer": "Use identities to transform LHS to RHS.",
+      "steps": [
+        {
+          "stepText": "Apply trigonometric identities.",
+          "score": 1,
+          "explanation": "Correctly applied initial identities."
+        },
+        {
+          "stepText": "Simplify LHS.",
+          "score": 1,
+          "explanation": "Correctly simplified part of LHS."
+        },
+        {
+          "stepText": "Transform to match RHS.",
+          "score": 1,
+          "explanation": "Partial transformation shown."
+        },
+        {
+          "stepText": "Complete proof.",
+          "score": 0,
+          "explanation": "Proof not fully completed."
+        }
+      ]
+    },
+    {
+      "questionId": "Q7",
+      "questionText": "From the top of a building, the angle of elevation of the top of a cell tower is 60° and the angle of depression to its foot is 45°. If the distance of the building from the tower is 7m, then find the height of the tower.",
+      "maxMarks": 4,
+      "scoreAwarded": 0,
+      "studentAnswer": "Not attempted",
+      "referenceAnswer": "Use trigonometric ratios to find the height of the tower using the given angles and distance.",
+      "steps": [
+        {
+          "stepText": "Identify the right triangles formed by the angles of elevation and depression.",
+          "score": 0,
+          "explanation": "The student did not attempt the question."
+        }
+      ]
+    },
+    {
+      "questionId": "Q8",
+      "questionText": "cot(90°-A) = [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) tan A",
+      "referenceAnswer": "D) tan A",
+      "steps": [
+        {
+          "stepText": "Identify the trigonometric identity for cot(90°-A).",
+          "score": 1,
+          "explanation": "The student correctly identified the identity."
+        }
+      ]
+    },
+    {
+      "questionId": "Q9",
+      "questionText": "The point (-3,-8) is in the quadrant [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "C) Q3",
+      "referenceAnswer": "C) Q3",
+      "steps": [
+        {
+          "stepText": "Determine the quadrant based on the signs of the coordinates.",
+          "score": 1,
+          "explanation": "The student correctly identified the quadrant."
+        }
+      ]
+    },
+    {
+      "questionId": "Q10",
+      "questionText": "x+y=2015 has — number of solutions [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) Infinite",
+      "referenceAnswer": "D) Infinite",
+      "steps": [
+        {
+          "stepText": "Recognize that a linear equation in two variables has infinite solutions.",
+          "score": 1,
+          "explanation": "The student correctly identified the number of solutions."
+        }
+      ]
+    }
+  ],
+  "timestamp": "2025-10-10T09:54:53.457Z",
+  "evaluationTime": "79.93 seconds",
+  "tokensUsed": 14980,
+  "method": "vision-api"
+}

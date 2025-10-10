@@ -26,7 +26,9 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
       if (type === 'question') {
         setQuestionPaper(e.dataTransfer.files[0]);
       } else {
-        setAnswerSheet(Array.from(e.dataTransfer.files));
+        // Add new files to existing array instead of replacing
+        const newFiles = Array.from(e.dataTransfer.files);
+        setAnswerSheet(prev => [...prev, ...newFiles]);
       }
     }
   };
@@ -35,7 +37,9 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
     if (type === 'question') {
       setQuestionPaper(e.target.files[0]);
     } else {
-      setAnswerSheet(Array.from(e.target.files));
+      // Add new files to existing array instead of replacing
+      const newFiles = Array.from(e.target.files);
+      setAnswerSheet(prev => [...prev, ...newFiles]);
     }
   };
 
@@ -48,16 +52,30 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
     }
 
     setIsUploading(true);
+    
+    // Determine if single or bulk evaluation based on number of answer sheets
+    const isBulkEvaluation = answerSheet.length > 1;
+    
+    if (isBulkEvaluation) {
+      // Bulk evaluation - multiple answer sheets
+      await handleBulkEvaluation();
+    } else {
+      // Single evaluation - one answer sheet
+      await handleSingleEvaluation();
+    }
+  };
+
+  const handleSingleEvaluation = async () => {
     onUploadStart();
 
     const formData = new FormData();
     formData.append('questionPaper', questionPaper);
-    answerSheet.forEach((file, index) => {
+    answerSheet.forEach((file) => {
       formData.append('answerSheet', file);
     });
 
     try {
-      const response = await fetch('https://api.smartgrader.in/api/evaluate', {
+      const response = await fetch('http://localhost:5000/api/evaluate', {
         method: 'POST',
         body: formData,
       });
@@ -68,10 +86,8 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
       }
 
       const result = await response.json();
-      // Store result in localStorage for now, in a real app this would be in state management
       localStorage.setItem('evaluationResult', JSON.stringify(result));
       
-      // Simulate processing time for better UX
       setTimeout(() => {
         onUploadComplete();
       }, 2000);
@@ -84,11 +100,48 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
     }
   };
 
+  const handleBulkEvaluation = async () => {
+    const formData = new FormData();
+    formData.append('questionPaper', questionPaper);
+    answerSheet.forEach((file) => {
+      formData.append('answerSheets', file);
+    });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/evaluate-bulk', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Upload failed');
+      }
+
+      const result = await response.json();
+      
+      // Pass bulk job info to parent
+      if (window.onBulkEvaluationStart) {
+        window.onBulkEvaluationStart(result);
+      }
+      
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Upload failed: ' + error.message);
+      setIsUploading(false);
+    }
+  };
+
   return (
     <div className="upload-container">
       <div className="upload-header">
         <h1>Smart Grader</h1>
         <p>AI-powered evaluation of student answer sheets</p>
+        {answerSheet.length > 1 && (
+          <p className="multi-student-notice">
+            📚 Evaluating {answerSheet.length} students simultaneously
+          </p>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} className="upload-form">
@@ -128,7 +181,7 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
         </div>
 
         <div className="upload-section">
-          <h3>Answer Sheet</h3>
+          <h3>Answer Sheet{answerSheet.length > 1 ? 's' : ''} ({answerSheet.length} file{answerSheet.length !== 1 ? 's' : ''})</h3>
           <div
             className={`upload-area ${dragActive.answer ? 'drag-active' : ''}`}
             onDragEnter={(e) => handleDrag(e, 'answer')}
@@ -138,8 +191,8 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
           >
             <div className="upload-content">
               <div className="upload-icon">📝</div>
-              <p>Drag & drop answer sheet files here</p>
-              <p className="upload-subtext">or click to browse (multiple files allowed)</p>
+              <p>Drag & drop answer sheet{answerSheet.length === 0 ? ' file' : 's'} here</p>
+              <p className="upload-subtext">or click to browse (1 student or multiple students)</p>
               <input
                 type="file"
                 accept=".pdf,.jpg,.jpeg,.png"
@@ -172,7 +225,11 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
           className="submit-btn"
           disabled={!questionPaper || answerSheet.length === 0 || isUploading}
         >
-          {isUploading ? 'Evaluating...' : 'Start Evaluation'}
+          {isUploading 
+            ? 'Starting Evaluation...' 
+            : answerSheet.length > 1 
+              ? `Start Evaluation (${answerSheet.length} students)` 
+              : 'Start Evaluation'}
         </button>
       </form>
     </div>

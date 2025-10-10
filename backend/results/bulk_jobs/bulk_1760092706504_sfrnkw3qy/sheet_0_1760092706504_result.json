@@ -1,0 +1,229 @@
+{
+  "student": {
+    "name": "A. Saicharan",
+    "class": "10th",
+    "rollNumber": "12"
+  },
+  "exam": {
+    "name": "FA-2",
+    "date": "2025-2026",
+    "totalMarks": 20
+  },
+  "evaluation": {
+    "totalScore": 19.5,
+    "maxScore": 20,
+    "percentage": 97.5,
+    "grade": "A+",
+    "overallFeedback": "Excellent performance with a strong grasp of mathematical concepts. Minor errors noted but overall very well done."
+  },
+  "questions": [
+    {
+      "questionId": "1",
+      "questionText": "Evaluate sin 45° + cos 45°",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2",
+      "referenceAnswer": "sin 45° = 1/√2, cos 45° = 1/√2, sin 45° + cos 45° = √2",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 3):",
+        "studentWork": "sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2",
+        "correctElements": [
+          "Correct trigonometric values",
+          "Proper simplification to √2"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: sin 45° = 1/√2 ✓, Step 2: cos 45° = 1/√2 ✓, Step 3: Addition = 2/√2 ✓, Step 4: Simplification = √2 ✓",
+        "partialCreditReasoning": "All calculations correct, final answer √2 is right.",
+        "suggestions": "None, perfect solution."
+      }
+    },
+    {
+      "questionId": "2",
+      "questionText": "If tan 2A = cot(A - 18°) where 2A is an acute angle. Find the value of A.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "A = 36°",
+      "referenceAnswer": "A = 36°",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 4):",
+        "studentWork": "90° - 2A = A - 18°, 3A = 108°, A = 36°",
+        "correctElements": [
+          "Correct equation setup",
+          "Correct solution for A"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Set equation 90° - 2A = A - 18° ✓, Step 2: Solve for A, 3A = 108° ✓, Step 3: A = 36° ✓",
+        "partialCreditReasoning": "Correct setup and solution.",
+        "suggestions": "None, well done."
+      }
+    },
+    {
+      "questionId": "3",
+      "questionText": "Length of the shadow of a 15 meter high pole is 5√3 meters at 7 o'clock in the morning. What is the angle of elevation of the sunrays with the ground at the time?",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "Angle of elevation = 60°",
+      "referenceAnswer": "Angle of elevation = 60°",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 5):",
+        "studentWork": "tan θ = 15 / 5√3 = √3, θ = 60°",
+        "correctElements": [
+          "Correct use of tangent function",
+          "Correct calculation of angle"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: tan θ = opposite/adjacent = 15/5√3 ✓, Step 2: Simplify to tan θ = √3 ✓, Step 3: θ = 60° ✓",
+        "partialCreditReasoning": "Correct application of trigonometry.",
+        "suggestions": "None, excellent work."
+      }
+    },
+    {
+      "questionId": "4",
+      "questionText": "Check whether the given pair of equations represent intersecting, parallel or coincident lines.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "Intersecting",
+      "referenceAnswer": "Intersecting",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "Comparing ratios, a1/a2 ≠ b1/b2, hence intersecting",
+        "correctElements": [
+          "Correct comparison of ratios",
+          "Correct conclusion"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Compare a1/a2 = 5/7, b1/b2 = -4/6 ✓, Step 2: a1/a2 ≠ b1/b2 ✓, Step 3: Conclusion: Intersecting ✓",
+        "partialCreditReasoning": "Correct analysis and conclusion.",
+        "suggestions": "None, perfect analysis."
+      }
+    },
+    {
+      "questionId": "5",
+      "questionText": "Solve 8x + 5y = 9 by an elimination method.",
+      "maxMarks": 4,
+      "scoreAwarded": 4,
+      "studentAnswer": "(x, y) = (-2, 5)",
+      "referenceAnswer": "(x, y) = (-2, 5)",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 7):",
+        "studentWork": "8x + 5y = 9, 3x + 2y = 4, Solution: (x, y) = (-2, 5)",
+        "correctElements": [
+          "Correct elimination method",
+          "Correct solution"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Multiply equations for elimination ✓, Step 2: Solve for y ✓, Step 3: Substitute to find x ✓, Step 4: Solution (x, y) = (-2, 5) ✓",
+        "partialCreditReasoning": "Correct method and solution.",
+        "suggestions": "None, excellent solution."
+      }
+    },
+    {
+      "questionId": "6",
+      "questionText": "Prove that √((1+cosθ)/(1-cosθ)) = cosecθ + cotθ",
+      "maxMarks": 4,
+      "scoreAwarded": 3.5,
+      "studentAnswer": "Proved with minor error",
+      "referenceAnswer": "√((1+cosθ)/(1-cosθ)) = cosecθ + cotθ",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 8):",
+        "studentWork": "LHS = √((1+cosθ)/(1-cosθ)), RHS = cosecθ + cotθ, Proved",
+        "correctElements": [
+          "Correct approach",
+          "Correct use of identities"
+        ],
+        "errors": [
+          "Minor error in simplification"
+        ],
+        "mathematicalSteps": "Step 1: Multiply numerator and denominator by (1+cosθ) ✓, Step 2: Simplify using identities ✓, Step 3: Minor error in final step",
+        "partialCreditReasoning": "Minor error in simplification, but overall understanding is clear.",
+        "suggestions": "Review simplification steps to avoid minor errors."
+      }
+    },
+    {
+      "questionId": "8",
+      "questionText": "cot(90°-A) = [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) tan A",
+      "referenceAnswer": "D) tan A",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 9):",
+        "studentWork": "D) tan A",
+        "correctElements": [
+          "Correct choice"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer.",
+        "suggestions": "None, well done."
+      }
+    },
+    {
+      "questionId": "9",
+      "questionText": "The point (-3, -8) is in the quadrant [ ]",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "C) Q3",
+      "referenceAnswer": "C) Q3",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 9):",
+        "studentWork": "C) Q3",
+        "correctElements": [
+          "Correct quadrant identification"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer.",
+        "suggestions": "None, accurate identification."
+      }
+    },
+    {
+      "questionId": "10",
+      "questionText": "x+y=2015 has __ number of solutions",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D) Infinite",
+      "referenceAnswer": "D) Infinite",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 9):",
+        "studentWork": "D) Infinite",
+        "correctElements": [
+          "Correct understanding of linear equations"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer.",
+        "suggestions": "None, well understood."
+      }
+    },
+    {
+      "questionId": "11",
+      "questionText": "Value of tan 30° + 2 cot 60°",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "C) 2",
+      "referenceAnswer": "C) 2",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 9):",
+        "studentWork": "C) 2",
+        "correctElements": [
+          "Correct calculation"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer.",
+        "suggestions": "None, excellent calculation."
+      }
+    }
+  ],
+  "timestamp": "2025-10-10T10:38:28.704Z",
+  "evaluationTime": "96.30 seconds",
+  "tokensUsed": 12540,
+  "method": "vision-api-complete"
+}
