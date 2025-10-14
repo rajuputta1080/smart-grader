@@ -45,9 +45,9 @@ exports.startBulkEvaluation = async (req, res) => {
     console.log(`   Answer Sheets: ${answerFiles.length} files`);
     
     // For now, estimate pages (you can enhance this with actual PDF page detection)
-    // Assuming average pages for estimation
-    const avgQuestionPages = 24; // Can be detected from actual PDF
-    const avgAnswerPages = 32;   // Can be detected from actual PDF
+    // Assuming average pages for estimation (more realistic values)
+    const avgQuestionPages = 1;  // Typical question paper
+    const avgAnswerPages = 7;    // Typical answer sheet
     
     // Calculate processing strategy
     const strategy = getProcessingStrategy(
@@ -242,4 +242,56 @@ function calculateGradeDistribution(results) {
   
   return distribution;
 }
+
+/**
+ * Retry a failed evaluation for a specific sheet
+ */
+exports.retryFailedSheet = async (req, res) => {
+  const { jobId, sheetId } = req.params;
+  
+  try {
+    const job = jobManager.getJob(jobId);
+    if (!job) {
+      return res.status(404).json({ error: 'Job not found' });
+    }
+    
+    const sheet = job.sheets.find(s => s.id === sheetId);
+    if (!sheet) {
+      return res.status(404).json({ error: 'Sheet not found' });
+    }
+    
+    if (sheet.status !== 'failed') {
+      return res.status(400).json({ error: 'Sheet is not in failed status' });
+    }
+    
+    // Reset sheet status to queued for retry
+    sheet.status = 'queued';
+    sheet.error = null;
+    sheet.resultPath = null;
+    
+    // Save updated job state
+    jobManager.saveJobState(job);
+    
+    // Import and start the processor
+    const { processBulkJob } = require('../utils/concurrentProcessor');
+    
+    // Start processing this specific sheet (the processor will handle retries)
+    processBulkJob(jobId)
+      .catch(error => console.error(`Error retrying sheet ${sheetId} in job ${jobId}:`, error));
+    
+    res.json({
+      message: 'Retry initiated successfully',
+      jobId: jobId,
+      sheetId: sheetId,
+      status: 'queued'
+    });
+    
+  } catch (error) {
+    console.error('Error retrying failed sheet:', error);
+    res.status(500).json({ error: error.message || 'Failed to retry sheet' });
+  }
+};
+
+// Note: Functions are already exported using exports.functionName syntax above
+// No need for module.exports at the end
 

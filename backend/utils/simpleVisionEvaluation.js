@@ -255,11 +255,11 @@ async function evaluateWithVision(questionPaperImages, answerSheetImages) {
 
     // Single API call with timeout
     const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('Evaluation timeout after 180 seconds')), 180000)
+      setTimeout(() => reject(new Error('Evaluation timeout after 450 seconds')), 450000)
     );
 
     const apiPromise = openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-5',
       messages: [
         {
           role: 'system',
@@ -270,8 +270,8 @@ async function evaluateWithVision(questionPaperImages, answerSheetImages) {
           content: messageContent
         }
       ],
-      temperature: 0.2,
-      max_tokens: 16000,
+      // temperature: 0.2, // GPT-5 only supports default temperature (1)
+      max_completion_tokens: 16000,
       response_format: { type: "json_object" }
     });
 
@@ -335,5 +335,6 @@ function validateEvaluationResult(result) {
 }
 
 module.exports = {
-  evaluateWithVision
+  evaluateWithVision,
+  buildCompleteEvaluationPrompt
 };

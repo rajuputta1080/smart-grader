@@ -46,5 +46,8 @@ router.get('/:jobId/results', bulkEvaluationController.getAllResults);
 // Get individual sheet result
 router.get('/:jobId/result/:sheetId', bulkEvaluationController.getSheetResult);
 
+// Retry a failed sheet
+router.post('/:jobId/retry/:sheetId', bulkEvaluationController.retryFailedSheet);
+
 module.exports = router;
 

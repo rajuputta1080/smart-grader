@@ -167,15 +167,17 @@ const UploadForm = ({ onUploadStart, onUploadComplete }) => {
             </div>
           </div>
           {questionPaper && (
-            <div className="file-preview">
-              <span>📄 {questionPaper.name}</span>
-              <button 
-                type="button" 
-                onClick={() => setQuestionPaper(null)}
-                className="remove-file"
-              >
-                ✕
-              </button>
+            <div className="single-file-preview">
+              <div className="file-preview">
+                <span>📄 {questionPaper.name}</span>
+                <button 
+                  type="button" 
+                  onClick={() => setQuestionPaper(null)}
+                  className="remove-file"
+                >
+                  ✕
+                </button>
+              </div>
             </div>
           )}
         </div>

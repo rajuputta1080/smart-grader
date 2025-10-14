@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ResultCard from './ResultCard';
 import './BulkProgressTracker.css';
 
@@ -9,32 +9,33 @@ const BulkProgressTracker = ({ jobId }) => {
   const [selectedResult, setSelectedResult] = useState(null);
   const [showResultModal, setShowResultModal] = useState(false);
 
+  // Fetch job status function (defined with useCallback so it can be used in useEffect and retry)
+  const fetchJobStatus = useCallback(async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/evaluate-bulk/${jobId}`);
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch job status');
+      }
+      
+      const data = await response.json();
+      setJobData(data);
+      setLoading(false);
+      
+      // Stop polling if job is completed or failed
+      if (data.status === 'completed' || data.status === 'failed') {
+        return;
+      }
+    } catch (err) {
+      console.error('Error fetching job status:', err);
+      setError(err.message);
+      setLoading(false);
+    }
+  }, [jobId]);
+
   // Poll job status
   useEffect(() => {
     if (!jobId) return;
-
-    const fetchJobStatus = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/api/evaluate-bulk/${jobId}`);
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch job status');
-        }
-        
-        const data = await response.json();
-        setJobData(data);
-        setLoading(false);
-        
-        // Stop polling if job is completed or failed
-        if (data.status === 'completed' || data.status === 'failed') {
-          return;
-        }
-      } catch (err) {
-        console.error('Error fetching job status:', err);
-        setError(err.message);
-        setLoading(false);
-      }
-    };
 
     // Initial fetch
     fetchJobStatus();
@@ -49,7 +50,7 @@ const BulkProgressTracker = ({ jobId }) => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [jobId, jobData?.status]);
+  }, [jobId, jobData?.status, fetchJobStatus]);
 
   const viewResult = async (sheetId) => {
     try {
@@ -68,6 +69,31 @@ const BulkProgressTracker = ({ jobId }) => {
     } catch (err) {
       console.error('Error fetching result:', err);
       alert('Failed to load result: ' + err.message);
+    }
+  };
+
+  const retryFailedSheet = async (sheetId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/evaluate-bulk/${jobId}/retry/${sheetId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to retry sheet');
+      }
+      
+      const result = await response.json();
+      console.log('Retry initiated:', result);
+      
+      // Refresh the job status to show updated state
+      fetchJobStatus();
+      
+    } catch (err) {
+      console.error('Error retrying sheet:', err);
+      alert('Failed to retry sheet: ' + err.message);
     }
   };
 
@@ -194,6 +220,15 @@ const BulkProgressTracker = ({ jobId }) => {
                     onClick={() => viewResult(sheet.id)}
                   >
                     View Report
+                  </button>
+                )}
+                
+                {sheet.status === 'failed' && (
+                  <button 
+                    className="retry-btn"
+                    onClick={() => retryFailedSheet(sheet.id)}
+                  >
+                    Retry
                   </button>
                 )}
                 

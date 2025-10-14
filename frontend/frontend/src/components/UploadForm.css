@@ -97,14 +97,25 @@
   cursor: pointer;
 }
 
+.single-file-preview {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .files-preview {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 5px;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  background: #f8f9fa;
 }
 
 .files-preview::-webkit-scrollbar {

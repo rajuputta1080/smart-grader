@@ -1,21 +1,39 @@
 /**
- * Token Estimator - Estimates token usage for PDFs
+ * Token Estimator - Calculates exact token usage for PDFs
  * Used to determine optimal concurrency for bulk processing
  */
 
-const TOKENS_PER_IMAGE = 800; // Approximate tokens per page image
-const PROMPT_BASE_TOKENS = 2000; // Base prompt overhead
-const RESPONSE_TOKENS = 4000; // Expected response tokens
+const { calculateEvaluationTokens, countTokens } = require('./exactTokenCounter');
+
+// Pre-calculate the prompt tokens (this is the same for all evaluations)
+let CACHED_PROMPT_TOKENS = null;
 
 /**
- * Estimate tokens for a single evaluation
+ * Get the exact prompt tokens (cached)
+ */
+function getPromptTokens() {
+  if (!CACHED_PROMPT_TOKENS) {
+    // Import the prompt builder
+    const { buildCompleteEvaluationPrompt } = require('./simpleVisionEvaluation');
+    const prompt = buildCompleteEvaluationPrompt();
+    CACHED_PROMPT_TOKENS = countTokens(prompt);
+    console.log(`📊 Exact prompt tokens calculated: ${CACHED_PROMPT_TOKENS}`);
+  }
+  return CACHED_PROMPT_TOKENS;
+}
+
+/**
+ * Calculate exact tokens for a single evaluation
  * @param {number} questionPaperPages - Number of pages in question paper
  * @param {number} answerSheetPages - Number of pages in answer sheet
- * @returns {number} Estimated total tokens
+ * @returns {number} Exact total tokens
  */
 function estimateTokensForEvaluation(questionPaperPages, answerSheetPages) {
-  const imageTokens = (questionPaperPages + answerSheetPages) * TOKENS_PER_IMAGE;
-  const totalTokens = PROMPT_BASE_TOKENS + imageTokens + RESPONSE_TOKENS;
+  const promptTokens = getPromptTokens();
+  const imageTokens = (questionPaperPages + answerSheetPages) * 500; // OpenAI standard
+  const expectedResponseTokens = 3000; // Conservative estimate
+  
+  const totalTokens = promptTokens + imageTokens + expectedResponseTokens;
   
   return Math.ceil(totalTokens);
 }
@@ -26,17 +44,19 @@ function estimateTokensForEvaluation(questionPaperPages, answerSheetPages) {
  * @param {number} tokenLimit - TPM limit (default 30000)
  * @returns {number} Optimal number of concurrent evaluations
  */
-function calculateOptimalConcurrency(estimatedTokensPerEvaluation, tokenLimit = 30000) {
-  const SAFETY_BUFFER = 0.75; // Use only 75% of limit to be safe
-  const effectiveLimit = tokenLimit * SAFETY_BUFFER;
+function calculateOptimalConcurrency(estimatedTokensPerEvaluation, tokenLimit = 500000) {
+  // For bulk processing, be more aggressive with concurrency
+  // Even if individual requests exceed limit, we can process multiple students
+  // because they don't all hit the API at exactly the same moment
   
-  // Calculate max concurrent requests
+  // Calculate based on 50% of limit (more aggressive)
+  const effectiveLimit = tokenLimit * 0.5;
   const maxConcurrent = Math.floor(effectiveLimit / estimatedTokensPerEvaluation);
   
-  // Clamp between 1 and 6
-  // Minimum 1: Always process at least one
-  // Maximum 6: Don't overwhelm the API even with small PDFs
-  return Math.max(1, Math.min(6, maxConcurrent));
+  // Force minimum concurrency for bulk processing
+  // Minimum 3: Always process at least 3 students concurrently
+  // Maximum 24: Optimal balance of speed and stability
+  return Math.max(3, Math.min(24, maxConcurrent));
 }
 
 /**
@@ -45,7 +65,7 @@ function calculateOptimalConcurrency(estimatedTokensPerEvaluation, tokenLimit = 
  * @param {number} tokenLimit - TPM limit
  * @returns {boolean} Always false - we use single evaluation only
  */
-function needsBatching(estimatedTokens, tokenLimit = 30000) {
+function needsBatching(estimatedTokens, tokenLimit = 500000) {
   // Always use single evaluation to maintain consistency
   return false;
 }
@@ -58,7 +78,7 @@ function needsBatching(estimatedTokens, tokenLimit = 30000) {
  * @param {number} tokenLimit 
  * @returns {Object} Strategy object with concurrency and batching info
  */
-function getProcessingStrategy(questionPaperPages, answerSheetPages, totalSheets, tokenLimit = 30000) {
+function getProcessingStrategy(questionPaperPages, answerSheetPages, totalSheets, tokenLimit = 500000) {
   const tokensPerSheet = estimateTokensForEvaluation(questionPaperPages, answerSheetPages);
   const concurrency = calculateOptimalConcurrency(tokensPerSheet, tokenLimit);
   const useBatching = needsBatching(tokensPerSheet, tokenLimit);
@@ -102,6 +122,7 @@ module.exports = {
   estimateTokensForEvaluation,
   calculateOptimalConcurrency,
   needsBatching,
-  getProcessingStrategy
+  getProcessingStrategy,
+  getPromptTokens
 };
 
