@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ResultCard.css';
 
-const ResultCard = () => {
+const ResultCard = ({ hideBackButton = false, onBackOverride = null }) => {
   const [expandedQuestions, setExpandedQuestions] = useState({});
   const [result, setResult] = useState(null);
 
@@ -65,12 +65,21 @@ const ResultCard = () => {
 
   return (
     <div className="result-container">
-      <div className="result-header">
-        <button onClick={goBack} className="back-btn">← Back to Upload</button>
-        <div className="header-actions">
-          <button onClick={exportToPDF} className="action-btn primary">Download Report</button>
+      {!hideBackButton && (
+        <div className="result-header">
+          <button onClick={onBackOverride || goBack} className="back-btn">← Back to Upload</button>
+          <div className="header-actions">
+            <button onClick={exportToPDF} className="action-btn primary">Download Report</button>
+          </div>
         </div>
-      </div>
+      )}
+      {hideBackButton && (
+        <div className="result-header">
+          <div className="header-actions" style={{marginLeft: 'auto'}}>
+            <button onClick={exportToPDF} className="action-btn primary">Download Report</button>
+          </div>
+        </div>
+      )}
 
       <div className="result-card">
         <div className="card-header">

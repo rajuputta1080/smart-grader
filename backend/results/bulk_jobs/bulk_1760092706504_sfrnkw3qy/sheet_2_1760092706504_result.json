@@ -1,0 +1,229 @@
+{
+  "student": {
+    "name": "B. Ishanth",
+    "class": "10th C",
+    "rollNumber": "23"
+  },
+  "exam": {
+    "name": "FA-2",
+    "date": "2025-09-18",
+    "totalMarks": 20
+  },
+  "evaluation": {
+    "totalScore": 18,
+    "maxScore": 20,
+    "percentage": 90,
+    "grade": "A+",
+    "overallFeedback": "Excellent performance with strong understanding of mathematical concepts. Minor errors in calculations, but overall very well done."
+  },
+  "questions": [
+    {
+      "questionId": "1",
+      "questionText": "Evaluate sin 45° + cos 45°",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "sin 45° + cos 45° = 1/√2 + 1/√2 = √2/2 = √2",
+      "referenceAnswer": "sin 45° = 1/√2, cos 45° = 1/√2, sin 45° + cos 45° = √2",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 3):",
+        "studentWork": "sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2/2 = √2",
+        "correctElements": [
+          "Correct trigonometric values",
+          "Proper simplification to √2"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: sin 45° = 1/√2 ✓, Step 2: cos 45° = 1/√2 ✓, Step 3: Addition = 2/√2 ✓, Step 4: Simplification = √2 ✓",
+        "partialCreditReasoning": "All calculations correct, final answer √2 is right.",
+        "suggestions": "Continue practicing trigonometric identities for fluency."
+      }
+    },
+    {
+      "questionId": "2",
+      "questionText": "If tan 2A = cot (A - 18°) where 2A is an acute angle, find the value of A.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "A = 36",
+      "referenceAnswer": "tan 2A = cot (A - 18°) implies 2A = 90 - (A - 18), solve for A = 36",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 3):",
+        "studentWork": "tan 2A = cot (A - 18°), 2A = 90 - (A - 18), A = 36",
+        "correctElements": [
+          "Correct equation setup",
+          "Accurate solving for A"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Set equation tan 2A = cot (A - 18°) ✓, Step 2: Solve 2A = 90 - (A - 18) ✓, Step 3: A = 36 ✓",
+        "partialCreditReasoning": "Correct setup and solution.",
+        "suggestions": "Ensure clarity in each algebraic step."
+      }
+    },
+    {
+      "questionId": "3",
+      "questionText": "Length of the shadow of a 15 meter high pole is 5√3 meters at 7 o'clock in the morning, then what is the angle of elevation of the sun rays with the ground at the time.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "Angle of elevation = 60°",
+      "referenceAnswer": "tan θ = opposite/adjacent = 15/5√3 = √3, θ = 60°",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 4):",
+        "studentWork": "tan θ = 15/5√3 = √3, θ = 60°",
+        "correctElements": [
+          "Correct use of tangent function",
+          "Accurate calculation of angle"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: tan θ = 15/5√3 ✓, Step 2: Simplify to √3 ✓, Step 3: θ = 60° ✓",
+        "partialCreditReasoning": "Correct trigonometric application and solution.",
+        "suggestions": "Review trigonometric ratios for different angles."
+      }
+    },
+    {
+      "questionId": "4",
+      "questionText": "Check whether the given pair of equations represent intersecting, parallel or coincident lines.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "They are intersecting lines.",
+      "referenceAnswer": "Compare coefficients: a1/a2 ≠ b1/b2, hence intersecting lines.",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 5):",
+        "studentWork": "a1/a2 = 5/7, b1/b2 = -4/6, a1/a2 ≠ b1/b2, intersecting lines",
+        "correctElements": [
+          "Correct comparison of coefficients",
+          "Accurate conclusion"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Calculate a1/a2 = 5/7 ✓, Step 2: Calculate b1/b2 = -4/6 ✓, Step 3: Compare and conclude intersecting ✓",
+        "partialCreditReasoning": "Accurate coefficient comparison and conclusion.",
+        "suggestions": "Practice more on identifying line relationships."
+      }
+    },
+    {
+      "questionId": "5",
+      "questionText": "Solve 8x + 5y = 9 by an elimination method.",
+      "maxMarks": 4,
+      "scoreAwarded": 4,
+      "studentAnswer": "x = -2, y = 5",
+      "referenceAnswer": "Use elimination to find x = -2, y = 5",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 6):",
+        "studentWork": "Elimination method: x = -2, y = 5",
+        "correctElements": [
+          "Correct elimination process",
+          "Accurate solution for x and y"
+        ],
+        "errors": [],
+        "mathematicalSteps": "Step 1: Multiply equations for elimination ✓, Step 2: Solve for y ✓, Step 3: Substitute to find x ✓",
+        "partialCreditReasoning": "Complete and correct solution using elimination.",
+        "suggestions": "Ensure clarity in each elimination step."
+      }
+    },
+    {
+      "questionId": "6",
+      "questionText": "Prove that √(1+cosθ)/(1-cosθ) = cosecθ + cotθ",
+      "maxMarks": 4,
+      "scoreAwarded": 3,
+      "studentAnswer": "Proof completed with minor errors",
+      "referenceAnswer": "Multiply numerator and denominator by conjugate, simplify to get cosecθ + cotθ",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 7):",
+        "studentWork": "Multiply by conjugate, simplify to get cosecθ + cotθ",
+        "correctElements": [
+          "Correct approach using conjugate",
+          "Mostly accurate simplification"
+        ],
+        "errors": [
+          "Minor algebraic error in final step"
+        ],
+        "mathematicalSteps": "Step 1: Multiply by conjugate ✓, Step 2: Simplify numerator and denominator ✓, Step 3: Minor error in final simplification ✗",
+        "partialCreditReasoning": "Correct method, minor error in final algebraic step.",
+        "suggestions": "Review algebraic manipulation for trigonometric identities."
+      }
+    },
+    {
+      "questionId": "8",
+      "questionText": "cot(90°-A) = ?",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D",
+      "referenceAnswer": "D (tan A)",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 8):",
+        "studentWork": "Selected option D",
+        "correctElements": [
+          "Correct option selected"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "Continue practicing trigonometric identities."
+      }
+    },
+    {
+      "questionId": "9",
+      "questionText": "The point (-3,-8) is in the quadrant",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "C",
+      "referenceAnswer": "C (Q3)",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 8):",
+        "studentWork": "Selected option C",
+        "correctElements": [
+          "Correct quadrant identified"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "Review coordinate geometry concepts."
+      }
+    },
+    {
+      "questionId": "10",
+      "questionText": "x + y = 2015 has ___ number of solutions",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D",
+      "referenceAnswer": "D (Infinite)",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 8):",
+        "studentWork": "Selected option D",
+        "correctElements": [
+          "Correct answer selected"
+        ],
+        "errors": [],
+        "partialCreditReasoning": "Correct answer selected.",
+        "suggestions": "Understand the concept of infinite solutions in linear equations."
+      }
+    },
+    {
+      "questionId": "11",
+      "questionText": "Value of tan²30 + 2cot²60",
+      "maxMarks": 1,
+      "scoreAwarded": 0,
+      "studentAnswer": "A",
+      "referenceAnswer": "D (4/3)",
+      "subjectType": "mathematical",
+      "detailedAnalysis": {
+        "pageReference": "Student's answer (page 8):",
+        "studentWork": "Selected option A",
+        "correctElements": [],
+        "errors": [
+          "Incorrect option selected"
+        ],
+        "partialCreditReasoning": "Incorrect answer, no partial credit.",
+        "suggestions": "Review trigonometric identities and calculations."
+      }
+    }
+  ],
+  "timestamp": "2025-10-10T10:41:12.158Z",
+  "evaluationTime": "70.36 seconds",
+  "tokensUsed": 13692,
+  "method": "vision-api-complete"
+}

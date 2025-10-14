@@ -47,10 +47,39 @@ button:focus {
   animation: fadeIn 0.5s ease-out;
 }
 
+/* Back Button Container */
+.back-btn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.back-btn {
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .App {
     padding: 0;
+  }
+  
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
   }
 }
 

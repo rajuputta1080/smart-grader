@@ -1,0 +1,225 @@
+{
+  "student": {
+    "name": "R. Pooja",
+    "class": "X",
+    "rollNumber": "Not specified"
+  },
+  "exam": {
+    "name": "FA-2 Maths",
+    "date": "2025-09-19",
+    "totalMarks": 20
+  },
+  "evaluation": {
+    "totalScore": 18,
+    "maxScore": 24,
+    "percentage": "75",
+    "grade": "B+",
+    "overallFeedback": "The student has demonstrated a good understanding of the concepts. There is room for improvement in accuracy and clarity in some solutions. The student performed well on questions 7 to 10, showing good understanding of the concepts. Minor errors were noted in question 10."
+  },
+  "questions": [
+    {
+      "questionId": "Q1",
+      "questionText": "Evaluate sin 45° + cos 45°.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "sin 45° = 1/√2, cos 45° = 1/√2, sin 45° + cos 45° = 2/√2 = √2",
+      "referenceAnswer": "sin 45° + cos 45° = 1/√2 + 1/√2 = √2",
+      "steps": [
+        {
+          "stepText": "Calculate sin 45° and cos 45°.",
+          "score": 1,
+          "explanation": "Correct calculation of trigonometric values."
+        },
+        {
+          "stepText": "Add the values.",
+          "score": 1,
+          "explanation": "Correct addition and simplification."
+        }
+      ]
+    },
+    {
+      "questionId": "Q2",
+      "questionText": "If tan 2A = cot (A - 18°) where 2A is an acute angle, find the value of A.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "tan 2A = cot (A - 18°), 90° - 2A = A - 18°, 3A = 108°, A = 36°",
+      "referenceAnswer": "A = 36°",
+      "steps": [
+        {
+          "stepText": "Set up the equation tan 2A = cot (A - 18°).",
+          "score": 1,
+          "explanation": "Correct setup of equation."
+        },
+        {
+          "stepText": "Solve for A.",
+          "score": 1,
+          "explanation": "Correct solution for A."
+        }
+      ]
+    },
+    {
+      "questionId": "Q3",
+      "questionText": "Length of the shadow of a 15-meter high pole is 5√3 meters at 7 o'clock in the morning. What is the angle of elevation of the sun rays with the ground at the time?",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "tan θ = opposite/adjacent = 15/5√3 = √3, θ = 60°",
+      "referenceAnswer": "θ = 60°",
+      "steps": [
+        {
+          "stepText": "Use tan θ = opposite/adjacent.",
+          "score": 1,
+          "explanation": "Correct application of tangent function."
+        },
+        {
+          "stepText": "Solve for θ.",
+          "score": 1,
+          "explanation": "Correct calculation of angle."
+        }
+      ]
+    },
+    {
+      "questionId": "Q4",
+      "questionText": "Check whether the given pair of equations represent intersecting, parallel, or coincident lines: 5x - 4y + 8 = 0, 7x + 6y - 9 = 0.",
+      "maxMarks": 2,
+      "scoreAwarded": 2,
+      "studentAnswer": "a1/a2 ≠ b1/b2, lines are intersecting.",
+      "referenceAnswer": "Lines are intersecting.",
+      "steps": [
+        {
+          "stepText": "Calculate ratios a1/a2 and b1/b2.",
+          "score": 1,
+          "explanation": "Correct calculation of ratios."
+        },
+        {
+          "stepText": "Determine relationship of lines.",
+          "score": 1,
+          "explanation": "Correct conclusion about lines."
+        }
+      ]
+    },
+    {
+      "questionId": "Q5",
+      "questionText": "Solve 8x + 5y = 9 and 3x + 2y = 4 by the elimination method.",
+      "maxMarks": 4,
+      "scoreAwarded": 3,
+      "studentAnswer": "y = 5, x = -2",
+      "referenceAnswer": "x = -2, y = 5",
+      "steps": [
+        {
+          "stepText": "Multiply equations to align coefficients.",
+          "score": 1,
+          "explanation": "Correct multiplication of equations."
+        },
+        {
+          "stepText": "Eliminate one variable.",
+          "score": 1,
+          "explanation": "Correct elimination of y."
+        },
+        {
+          "stepText": "Solve for remaining variable.",
+          "score": 1,
+          "explanation": "Correct solution for x."
+        },
+        {
+          "stepText": "Substitute back to find other variable.",
+          "score": 0,
+          "explanation": "Minor error in substitution step."
+        }
+      ]
+    },
+    {
+      "questionId": "Q6",
+      "questionText": "Prove that √((1+cosθ)/(1-cosθ)) = cosecθ + cotθ.",
+      "maxMarks": 4,
+      "scoreAwarded": 4,
+      "studentAnswer": "Multiply numerator and denominator by (1+cosθ), simplify to get cosecθ + cotθ.",
+      "referenceAnswer": "Correct proof using trigonometric identities.",
+      "steps": [
+        {
+          "stepText": "Multiply by conjugate.",
+          "score": 1,
+          "explanation": "Correct use of conjugate."
+        },
+        {
+          "stepText": "Simplify expression.",
+          "score": 1,
+          "explanation": "Correct simplification."
+        },
+        {
+          "stepText": "Use trigonometric identities.",
+          "score": 1,
+          "explanation": "Correct application of identities."
+        },
+        {
+          "stepText": "Final simplification to reach RHS.",
+          "score": 1,
+          "explanation": "Correct final simplification."
+        }
+      ]
+    },
+    {
+      "questionId": "Q7",
+      "questionText": "From the top of a building, the angle of elevation of the top of a cell tower is 60° and the angle of depression to its foot is 45°. If the distance of the building from the tower is 7m, then find the height of the tower.",
+      "maxMarks": 4,
+      "scoreAwarded": 0,
+      "studentAnswer": "Not attempted",
+      "referenceAnswer": "Use trigonometric ratios to find the height of the tower.",
+      "steps": [
+        {
+          "stepText": "Identify angles and distances.",
+          "score": 0,
+          "explanation": "The student did not attempt the question."
+        }
+      ]
+    },
+    {
+      "questionId": "Q8",
+      "questionText": "cot(90° - A) = [ ] A) 3 tan A B) sin A C) cot A D) tan A",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D",
+      "referenceAnswer": "D) tan A",
+      "steps": [
+        {
+          "stepText": "Select the correct trigonometric identity.",
+          "score": 1,
+          "explanation": "The student correctly identified the trigonometric identity."
+        }
+      ]
+    },
+    {
+      "questionId": "Q9",
+      "questionText": "The point (-3, -8) is in the quadrant [ ] A) Q1 B) Q2 C) Q3 D) Q4",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "C",
+      "referenceAnswer": "C) Q3",
+      "steps": [
+        {
+          "stepText": "Identify the quadrant based on the signs of the coordinates.",
+          "score": 1,
+          "explanation": "The student correctly identified the quadrant."
+        }
+      ]
+    },
+    {
+      "questionId": "Q10",
+      "questionText": "x + y = 2015 has __ number of solutions A) 10 B) 2014 C) 20 D) Infinite",
+      "maxMarks": 1,
+      "scoreAwarded": 1,
+      "studentAnswer": "D",
+      "referenceAnswer": "D) Infinite",
+      "steps": [
+        {
+          "stepText": "Determine the number of solutions for the linear equation.",
+          "score": 1,
+          "explanation": "The student correctly identified that the equation has infinite solutions."
+        }
+      ]
+    }
+  ],
+  "timestamp": "2025-10-10T09:53:27.920Z",
+  "evaluationTime": "78.91 seconds",
+  "tokensUsed": 14904,
+  "method": "vision-api"
+}

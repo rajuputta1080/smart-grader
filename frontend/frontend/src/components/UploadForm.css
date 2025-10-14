@@ -21,6 +21,18 @@
   color: #7f8c8d;
 }
 
+.multi-student-notice {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem !important;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
 .upload-form {
   display: flex;
   flex-direction: column;
@@ -85,11 +97,43 @@
   cursor: pointer;
 }
 
-.file-preview, .files-preview {
+.single-file-preview {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.files-preview {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.files-preview::-webkit-scrollbar {
+  width: 6px;
+}
+
+.files-preview::-webkit-scrollbar-track {
+  background: #ecf0f1;
+  border-radius: 3px;
+}
+
+.files-preview::-webkit-scrollbar-thumb {
+  background: #95a5a6;
+  border-radius: 3px;
+}
+
+.files-preview::-webkit-scrollbar-thumb:hover {
+  background: #7f8c8d;
 }
 
 .file-preview {
